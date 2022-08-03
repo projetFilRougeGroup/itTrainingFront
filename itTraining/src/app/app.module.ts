@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FormationsComponent } from './formations/formations.component';
 import { AddFormationComponent } from './add-formation/add-formation.component';
 import { ListerFormationComponent } from './lister-formation/lister-formation.component';
+import { AproposComponent } from './apropos/apropos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormationsComponent,
     AddFormationComponent,
-    ListerFormationComponent
+    ListerFormationComponent,
+    AproposComponent
   ],
   imports: [
     BrowserModule,

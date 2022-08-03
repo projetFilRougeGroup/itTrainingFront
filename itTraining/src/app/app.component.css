@@ -1,6 +1,8 @@
 nav {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-  background-color: #536483 !important;
+
+  background-color: #E6E8EE !important;
+  /* background-color: #536483 !important; */
   /* color: #FFFFFF !important; */
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
@@ -16,8 +18,9 @@ nav {
 }
 
 footer {
+  background-color: #E6E8EE !important;
   bottom: 0;
-  -webkit-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px -4px 5px 0px #ccc;
+-moz-box-shadow: 0px -4px 5px 0px #ccc;
+box-shadow: 0px -4px 5px 0px #ccc;
 }

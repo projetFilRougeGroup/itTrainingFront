@@ -7,6 +7,7 @@ import { FormationsComponent } from './formations/formations.component';
 import { AddFormationComponent } from './add-formation/add-formation.component';
 import { ListerFormationComponent } from './lister-formation/lister-formation.component';
 import { AproposComponent } from './apropos/apropos.component';
+import { ContactPublicComponent } from './contact-public/contact-public.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AproposComponent } from './apropos/apropos.component';
     FormationsComponent,
     AddFormationComponent,
     ListerFormationComponent,
-    AproposComponent
+    AproposComponent,
+    ContactPublicComponent
   ],
   imports: [
     BrowserModule,

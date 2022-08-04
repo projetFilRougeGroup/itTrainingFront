@@ -18,6 +18,11 @@ nav {
 }
 
 footer {
+  font-family: 'Fascinate Inline', cursive;
+
+  font-family: 'Libre Barcode 39 Text', cursive;
+
+  font-family: 'Tiro Tamil', serif;
   background-color: #E6E8EE !important;
   bottom: 0;
   -webkit-box-shadow: 0px -4px 5px 0px #ccc;

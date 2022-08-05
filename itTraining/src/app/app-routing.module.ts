@@ -5,6 +5,8 @@ import { AddFormationComponent } from './add-formation/add-formation.component';
 import { ListerFormationComponent } from './lister-formation/lister-formation.component';
 import { AproposComponent } from './apropos/apropos.component';
 import { ContactPublicComponent } from './contact-public/contact-public.component';
+import { CertificationsComponent } from './certifications/certifications.component';
+import { InfrastructuresEtCybersecuriteComponent } from './infrastructures-et-cybersecurite/infrastructures-et-cybersecurite.component';
 
 const routes: Routes = [
   {path: "formations", component : FormationsComponent},
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path: "lister-formation", component : ListerFormationComponent },
   {path: "apropos", component : AproposComponent },
   {path: "contactPublic", component : ContactPublicComponent },
+  {path: "certifications", component: CertificationsComponent},
+  {path:"infrastructuresSybersecurite", component:InfrastructuresEtCybersecuriteComponent},
   {path: "", redirectTo:"formations", pathMatch:"full" }
 
 ];

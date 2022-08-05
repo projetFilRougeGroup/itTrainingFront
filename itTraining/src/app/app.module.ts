@@ -8,6 +8,8 @@ import { AddFormationComponent } from './add-formation/add-formation.component';
 import { ListerFormationComponent } from './lister-formation/lister-formation.component';
 import { AproposComponent } from './apropos/apropos.component';
 import { ContactPublicComponent } from './contact-public/contact-public.component';
+import { CertificationsComponent } from './certifications/certifications.component';
+import { InfrastructuresEtCybersecuriteComponent } from './infrastructures-et-cybersecurite/infrastructures-et-cybersecurite.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ContactPublicComponent } from './contact-public/contact-public.componen
     AddFormationComponent,
     ListerFormationComponent,
     AproposComponent,
-    ContactPublicComponent
+    ContactPublicComponent,
+    CertificationsComponent,
+    InfrastructuresEtCybersecuriteComponent
   ],
   imports: [
     BrowserModule,

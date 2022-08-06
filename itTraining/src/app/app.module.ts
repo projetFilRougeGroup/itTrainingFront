@@ -8,7 +8,7 @@ import { AproposComponent } from './apropos/apropos.component';
 import { ContactPublicComponent } from './contact-public/contact-public.component';
 import { CertificationsComponent } from './certifications/certifications.component';
 import { InfrastructuresEtCybersecuriteComponent } from './infrastructures-et-cybersecurite/infrastructures-et-cybersecurite.component';
-import { SolutionsComponent } from './solutions/solutions.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +18,6 @@ import { SolutionsComponent } from './solutions/solutions.component';
     ContactPublicComponent,
     CertificationsComponent,
     InfrastructuresEtCybersecuriteComponent,
-    SolutionsComponent
   ],
   imports: [
     BrowserModule,

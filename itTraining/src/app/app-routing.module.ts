@@ -5,7 +5,6 @@ import { AproposComponent } from './apropos/apropos.component';
 import { ContactPublicComponent } from './contact-public/contact-public.component';
 import { CertificationsComponent } from './certifications/certifications.component';
 import { InfrastructuresEtCybersecuriteComponent } from './infrastructures-et-cybersecurite/infrastructures-et-cybersecurite.component';
-import { SolutionsComponent } from './solutions/solutions.component';
 
 const routes: Routes = [
   {path: "formations", component : FormationsComponent},
@@ -13,7 +12,6 @@ const routes: Routes = [
   {path: "contactPublic", component : ContactPublicComponent },
   {path: "certifications", component: CertificationsComponent},
   {path:"infrastructuresSybersecurite", component:InfrastructuresEtCybersecuriteComponent},
-  {path:"solutions", component:SolutionsComponent},
   {path: "", redirectTo:"formations", pathMatch:"full" }
 
 ];

@@ -4,23 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormationsComponent } from './formations/formations.component';
-import { AddFormationComponent } from './add-formation/add-formation.component';
-import { ListerFormationComponent } from './lister-formation/lister-formation.component';
 import { AproposComponent } from './apropos/apropos.component';
 import { ContactPublicComponent } from './contact-public/contact-public.component';
 import { CertificationsComponent } from './certifications/certifications.component';
 import { InfrastructuresEtCybersecuriteComponent } from './infrastructures-et-cybersecurite/infrastructures-et-cybersecurite.component';
+import { SolutionsComponent } from './solutions/solutions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormationsComponent,
-    AddFormationComponent,
-    ListerFormationComponent,
     AproposComponent,
     ContactPublicComponent,
     CertificationsComponent,
-    InfrastructuresEtCybersecuriteComponent
+    InfrastructuresEtCybersecuriteComponent,
+    SolutionsComponent
   ],
   imports: [
     BrowserModule,

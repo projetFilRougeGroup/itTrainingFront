@@ -9,6 +9,7 @@ import { ContactPublicComponent } from './contact-public/contact-public.componen
 import { CertificationsComponent } from './certifications/certifications.component';
 import { InfrastructuresEtCybersecuriteComponent } from './infrastructures-et-cybersecurite/infrastructures-et-cybersecurite.component';
 import { InfosPratiquesComponent } from './infos-pratiques/infos-pratiques.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { InfosPratiquesComponent } from './infos-pratiques/infos-pratiques.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

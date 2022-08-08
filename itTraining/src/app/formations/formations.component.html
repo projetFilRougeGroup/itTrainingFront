@@ -177,10 +177,23 @@
                       <div class="mx-5">
 
 
-                        <div class="input-group mb-3 mt-4">
-                            <input type="text" class="form-control" placeholder="Entrez l'e-mail" aria-label="Nom d'utilisateur du destinataire" aria-describedby="button-addon2">
-                            <button class="btn btn-success border-rad" type="button" id="button-addon2">S'abonner</button>
-                        </div>
+                        <form class="input-group mb-3 mt-4">
+
+                            <input type="email" id="emailInput" name="userEmail" class="form-control" placeholder="Entrez l'e-mail" aria-label="Nom d'utilisateur du destinataire" aria-describedby="button-addon2" [formControl]="newsletterForm">
+
+
+                            <button class="btn btn-success border-rad" type="submit" id="button-addon2" (click)="subscribe()">S'abonner</button>
+                            <br/>
+
+
+                        </form>
+                        <span *ngIf="newsletterForm.hasError('email') && !newsletterForm.hasError('required')" class="text-danger">
+                          S'il vous plaît, mettez une adresse email valide
+                        </span>
+
+                        <span *ngIf="newsletterForm.hasError('required')" class="text-danger">
+                          L'adresse e-mail est <strong>obligatoire</strong>
+                        </span>
 
                       </div>
 

@@ -14,7 +14,7 @@
       <!--Grid column-->
       <div class="col-md-9 mb-md-0 mb-5">
 
-          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+          <form id="contact-form" name="contact-form" [formGroup]="formContactPublic">
 
               <!--Grid row-->
               <div class="row">
@@ -23,16 +23,44 @@
                   <div class="col-md-6">
                       <div class="md-form mb-0">
                           <label for="name" class="">Votre nom </label>
-                          <input type="text" id="name" name="name" class="form-control">
+                            <input [class.is-invalid]="nomFirst?.invalid && nomFirst?.touched" [class.is-valid]="nomFirst?.valid" type="email" class="form-control" type="text" id="name" name="name" class="form-control" formControlName="nom">
+
+                            <div *ngIf="nomFirst?.touched && nomFirst?.invalid">
+                              <small class="text-danger" *ngIf="nomFirst?.errors">
+                                Le nom est requis !
+                              </small>
+                            </div>
+                            <div *ngIf="nomFirst?.touched && nomFirst?.valid">
+                              <small class="text-info">
+                                Le nom est semble correct !
+                              </small>
+                            </div>
+
                       </div>
                   </div>
                   <!--Grid column-->
+
+
 
                   <!--Grid column-->
                   <div class="col-md-6">
                       <div class="md-form mb-0">
                           <label for="email" class="">E-mail</label>
-                          <input type="text" id="email" name="email" class="form-control">
+                          <input [class.is-invalid] = "formContactPublic.get('email')?.invalid && formContactPublic.get('email')?.touched"
+                          [class.is-valid] = "formContactPublic.get('email')?.valid && formContactPublic.get('email')?.touched"
+                          type="text" id="email" name="email" class="form-control" formControlName="email">
+
+                          <div *ngIf="emailFirst?.touched && emailFirst?.invalid">
+                            <small class="text-danger" *ngIf="emailFirst?.errors">
+                              Veuillez saisir un email correct !
+                            </small>
+                          </div>
+                          <div *ngIf="emailFirst?.touched && emailFirst?.valid">
+                            <small class="text-info">
+                              L'email est semble correct !
+                            </small>
+                          </div>
+
                       </div>
                   </div>
                   <!--Grid column-->
@@ -45,11 +73,26 @@
                   <div class="col-md-12">
                       <div class="md-form mb-0">
                           <label for="subject" class="">Sujet</label>
-                          <input type="text" id="subject" name="subject" class="form-control">
+                          <input [class.is-invalid] = "formContactPublic.get('sujet')?.invalid && formContactPublic.get('sujet')?.touched" [class.is-valid]="formContactPublic.get('sujet')?.valid && formContactPublic.get('sujet')?.touched" type="text" id="subject" name="subject" class="form-control" formControlName="sujet">
+
+                          <div *ngIf="sujetFirst?.touched && sujetFirst?.invalid">
+                            <small class="text-danger" *ngIf="sujetFirst?.errors">
+                              Le sujet est requis !
+                            </small>
+                          </div>
+                          <div *ngIf="sujetFirst?.touched && sujetFirst?.valid">
+                            <small class="text-info">
+                              Le sujet est semble correct !
+                            </small>
+                          </div>
+
                       </div>
                   </div>
               </div>
               <!--Grid row-->
+
+
+
 
               <!--Grid row-->
               <div class="row">
@@ -59,7 +102,19 @@
 
                       <div class="md-form">
                           <label for="message">Votre  message</label>
-                          <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                          <textarea [class.is-invalid] = "formContactPublic.get('message')?.invalid && formContactPublic.get('message')?.touched" [class.is-valid]="formContactPublic.get('message')?.valid && formContactPublic.get('message')?.touched" type="text" id="message" name="message" rows="2" class="form-control md-textarea" formControlName="message"></textarea>
+
+                          <div *ngIf="messageFirst?.touched && messageFirst?.invalid">
+                            <small class="text-danger" *ngIf="sujetFirst?.errors">
+                              Veuillez saisir votre message !
+                            </small>
+                          </div>
+                          <div *ngIf="messageFirst?.touched && messageFirst?.valid">
+                            <small class="text-info">
+                              Le message est semble correct !
+                            </small>
+                          </div>
+
                       </div>
 
                   </div>

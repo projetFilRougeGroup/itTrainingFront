@@ -32,4 +32,11 @@ box-shadow: 0px -4px 5px 0px #ccc;
 .dropdown-item{
   cursor: pointer;
 }
+nav a:hover{
+  color:navy !important;
+
+}
+nav a:focus {
+  color:navy !important;
+}
 

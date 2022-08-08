@@ -20,10 +20,6 @@ Validators.required, Validators.email
     ]);
   }
 
-  onContinue():void {
-    this.router.navigateByUrl('formations');
-  }
-
   subscribe():void {
     if(this.newsletterForm.valid){
     console.log(this.newsletterForm.value);

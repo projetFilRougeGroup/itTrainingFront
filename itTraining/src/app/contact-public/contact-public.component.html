@@ -106,7 +106,7 @@
 
                           <div *ngIf="messageFirst?.touched && messageFirst?.invalid">
                             <small class="text-danger" *ngIf="sujetFirst?.errors">
-                              Veuillez saisir votre message !
+                              Veuillez saisir votre message ! mininum 15 caractères
                             </small>
                           </div>
                           <div *ngIf="messageFirst?.touched && messageFirst?.valid">
@@ -124,8 +124,8 @@
           </form>
           <br />
           <div class="text-center text-md-left">
-              <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Envoyer</a>&nbsp;
-              <a class="btn btn-primary">Annuler !</a>
+              <a class="btn btn-success" onclick="document.getElementById('contact-form').submit();">Envoyer</a>&nbsp;
+              <a class="btn btn-success">Annuler !</a>
           </div>
           <div class="status"></div>
       </div>

@@ -6,6 +6,7 @@
 
   <!--Section heading-->
   <h2 class="h1-responsive font-weight-bold text-center my-4">Contactez-nous</h2>
+
   <!--Section description-->
   <p class="text-center w-responsive mx-auto mb-5">Avez-vous des questions? N'hésitez pas à nous contacter directement. Notre équipe reviendra vers vous dans les heures qui suivent pour vous aider.</p>
 
@@ -27,7 +28,7 @@
 
                             <div *ngIf="nomFirst?.touched && nomFirst?.invalid">
                               <small class="text-danger" *ngIf="nomFirst?.errors">
-                                Le nom est requis !
+                                Ce champs est obligatoire !
                               </small>
                             </div>
                             <div *ngIf="nomFirst?.touched && nomFirst?.valid">
@@ -52,7 +53,7 @@
 
                           <div *ngIf="emailFirst?.touched && emailFirst?.invalid">
                             <small class="text-danger" *ngIf="emailFirst?.errors">
-                              Veuillez saisir un email correct !
+                              Ce champs est obligatoire ! Veuillez saisir un email correct !
                             </small>
                           </div>
                           <div *ngIf="emailFirst?.touched && emailFirst?.valid">
@@ -77,7 +78,7 @@
 
                           <div *ngIf="sujetFirst?.touched && sujetFirst?.invalid">
                             <small class="text-danger" *ngIf="sujetFirst?.errors">
-                              Le sujet est requis !
+                              Ce champs est obligatoire !
                             </small>
                           </div>
                           <div *ngIf="sujetFirst?.touched && sujetFirst?.valid">
@@ -106,7 +107,7 @@
 
                           <div *ngIf="messageFirst?.touched && messageFirst?.invalid">
                             <small class="text-danger" *ngIf="sujetFirst?.errors">
-                              Veuillez saisir votre message ! mininum 15 caractères
+                              Ce champs est obligatoire ! mininum 15 caractères
                             </small>
                           </div>
                           <div *ngIf="messageFirst?.touched && messageFirst?.valid">

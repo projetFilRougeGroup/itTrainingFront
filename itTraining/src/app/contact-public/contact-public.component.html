@@ -125,10 +125,16 @@
           </form>
           <br />
           <div class="text-center text-md-left">
-              <a class="btn btn-success" onclick="document.getElementById('contact-form').submit();">Envoyer</a>&nbsp;
-              <a class="btn btn-success">Annuler !</a>
+              <button class="btn btn-success" type="submit">Envoyer</button>&nbsp;
+              <button class="btn btn-danger" type="reset">Annuler !</button>
           </div>
-          <div class="status"></div>
+          <div class="status">
+            <div *ngIf="(messageFirst?.touched || sujetFirst?.touched || emailFirst?.touched || nomFirst?.touched ) && formContactPublic.invalid">
+              <small class="text-danger">
+                SVP, champs obligatoires manquants !
+              </small>
+            </div>
+          </div>
       </div>
       <!--Grid column-->
 

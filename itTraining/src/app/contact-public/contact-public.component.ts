@@ -44,4 +44,11 @@ export class ContactPublicComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+  funct(){
+
+  }
+
+
 }

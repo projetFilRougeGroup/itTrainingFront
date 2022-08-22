@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="m-4">
+    <h6 class="text-uppercase fw-bold">
+      <p>Liste des formations !</p>
+    </h6>
+    <hr />
+    <!--
+    idFormation : number;
+    nomFormation : string;
+    referenceFormation : string;
+    publicFormation : string;
+    objectifsFormation: string;
+    detailsFormation: string;
+    chaptersFormation: string;
+    priceFormation: number;
+    dureeFormation: number; -->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How To Create Simple Counter Section with Custom HTML and CSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- ======= Counter Section ======= -->
+    <section class="counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6" *ngFor="let formation of FormationTrainings">
+                    <div class="count-card">
+                        <i class="far fa-smile"></i>
+                        <span data-toggle="counter-up">{{formation.nomFormation}}</span>
+                        <h3>Réf : {{formation.referenceFormation}}</h3>
+                        <p>Durée : {{formation.dureeFormation}} j</p>
+                        <p>Prix : {{formation.priceFormation}} €</p>
+                        <a (click)="formationDetails(formation.idFormation)">Lire la suite »</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section><!-- End counter Section -->
+</body>
+</html>

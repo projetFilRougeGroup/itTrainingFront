@@ -1,0 +1,22 @@
+<nav>
+  <ul id="sidemenu">
+    <li>
+      <a [routerLink]="['dashboard']">Dashboard</a>
+    </li>
+    <li>
+      <h3> > User</h3>
+    </li>
+      <ul>
+        <li><a [routerLink]="['user']">Liste</a></li>
+        <li><a [routerLink]="['user/add']">Ajouter</a></li>
+      </ul>
+    <li>
+      <h3> > Formations</h3>
+    </li>
+      <ul>
+        <li><a [routerLink]="['formation']">Liste</a></li>
+        <li><a [routerLink]="['formation/add']">Ajouter</a></li>
+
+      </ul>
+  </ul>
+</nav>

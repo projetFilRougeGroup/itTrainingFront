@@ -11,6 +11,7 @@ export class FormationService {
   private baseURL ="http://localhost:8080/formation/formations";
 
   constructor(private httpClient:HttpClient) { }
+
   getFormationList():Observable<Formation[]>{
     return this.httpClient.get<Formation[]>(`${this.baseURL}`);
   }

@@ -1,3 +1,5 @@
+import { AuthGuard } from './_helpers/auth.guard';
+import { ErrorComponent } from './_utils/error/error.component';
 import { FormationsComponent } from './formations/formations.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -19,8 +21,11 @@ const routes: Routes = [
   {path:"FormationListComponent", component:FormationListComponent},
   {path:"CreateStagiaireComponent", component:CreateStagiaireComponent},
   {path:"formation-details/:idFormation", component:FormationDetailsComponent},
-
-  {path: "", redirectTo:"formations", pathMatch:"full" }
+  {path: "", redirectTo:"formations", pathMatch:"full" },
+  {path:'admin', loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule),
+canActivate:[AuthGuard]},
+  {path:'auth', loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)},
+  {path:'**', component:ErrorComponent}  // page d'erreur si aucun lien n'est valide
 
 
 ];

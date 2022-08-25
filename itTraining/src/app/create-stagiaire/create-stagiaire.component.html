@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,6 +7,7 @@
     <title>Créer un stagiaire</title>
   </head>
   <body>
+
     <div class="container bg-light border">
       <div class="m-4">
         <div class="container">
@@ -17,63 +18,117 @@
             Création d'un apprenant
           </h3>
           <div class="col-md-6 offset-md-3">
-            <form (ngSubmit)="onSubmit()">
+            <form (ngSubmit)="onSubmit()" [formGroup]="formCreateStagiaire">
               <div class="form-group">
-                <label>Nom </label>
+                <label for="nomStagiaire">Nom<span> *</span> </label>
                 <input
+                [class.is-invalid]="nomStagiaire?.invalid && nomStagiaire?.touched" [class.is-valid]="nomStagiaire?.valid"
                   type="text"
                   class="form-control"
                   id="nomStagiaire"
                   [(ngModel)]="stagiaire.nomStagiaire"
                   name="nomStagiaire"
+                  formControlName="nomStagiaire"
                 />
+
+                <div *ngIf="nomStagiaire?.touched && nomStagiaire?.invalid">
+                  <small class="text-danger" *ngIf="nomStagiaire?.errors">
+                    Ce champs est obligatoire ! Veuillez saisir un nom valide !
+                  </small>
+                </div>
+
               </div>
 
               <div class="form-group">
-                <label>Prénom </label>
+                <label for="prenomStagiaire">Prénom<span> *</span> </label>
                 <input
+                [class.is-invalid]="prenomStagiaire?.invalid && prenomStagiaire?.touched" [class.is-valid]="prenomStagiaire?.valid"
                   type="text"
                   class="form-control"
                   id="prenomStagiaire"
                   [(ngModel)]="stagiaire.prenomStagiaire"
                   name="prenomStagiaire"
+                  formControlName="prenomStagiaire"
+
                 />
+
+                <div *ngIf="prenomStagiaire?.touched && prenomStagiaire?.invalid">
+                  <small class="text-danger" *ngIf="prenomStagiaire?.errors">
+                    Ce champs est obligatoire ! Veuillez saisir un prénom valide !
+                  </small>
+                </div>
               </div>
 
               <div class="form-group">
-                <label>Email </label>
+                <label for="emailStagiaire">Email<span> *</span></label>
                 <input
+                [class.is-invalid] = "formCreateStagiaire.get('emailStagiaire')?.invalid && formCreateStagiaire.get('emailStagiaire')?.touched"
+                [class.is-valid] = "formCreateStagiaire.get('emailStagiaire')?.valid && formCreateStagiaire.get('emailStagiaire')?.touched"
                   type="text"
                   class="form-control"
                   id="emailStagiaire"
                   [(ngModel)]="stagiaire.emailStagiaire"
                   name="emailStagiaire"
+                  formControlName="emailStagiaire"
                 />
+                <div *ngIf="formCreateStagiaire.get('emailStagiaire')?.touched && formCreateStagiaire.get('emailStagiaire')?.invalid">
+                  <small class="text-danger" *ngIf="formCreateStagiaire.get('emailStagiaire')?.errors">
+                    Ce champs est obligatoire ! Veuillez saisir un email correct !
+                  </small>
+                </div>
               </div>
 
               <div class="form-group">
-                <label>Téléphone </label>
+                <label>Téléphone <span>*</span></label>
                 <input
+                [class.is-invalid] = "formCreateStagiaire.get('telStagiaire')?.invalid && formCreateStagiaire.get('telStagiaire')?.touched"
+                [class.is-valid] = "formCreateStagiaire.get('telStagiaire')?.valid && formCreateStagiaire.get('telStagiaire')?.touched"
+
                   type="text"
                   class="form-control"
                   id="telStagiaire"
                   [(ngModel)]="stagiaire.telStagiaire"
                   name="telStagiaire"
+                  formControlName="telStagiaire"
                 />
+                <div *ngIf="formCreateStagiaire.get('telStagiaire')?.touched && formCreateStagiaire.get('telStagiaire')?.invalid">
+                  <small class="text-danger" *ngIf="formCreateStagiaire.get('telStagiaire')?.errors">
+                    Ce champs est obligatoire !
+                  </small>
+                </div>
               </div>
 
               <div class="form-group">
-                <label>Adresse </label>
+                <label>Adresse <span>*</span></label>
                 <input
+                [class.is-invalid] = "formCreateStagiaire.get('adresseStagiaire')?.invalid && formCreateStagiaire.get('adresseStagiaire')?.touched"
+                [class.is-valid] = "formCreateStagiaire.get('adresseStagiaire')?.valid && formCreateStagiaire.get('adresseStagiaire')?.touched"
+
                   type="text"
                   class="form-control"
                   id="adresseStagiaire"
                   [(ngModel)]="stagiaire.adresseStagiaire"
                   name="adresseStagiaire"
+                  formControlName="adresseStagiaire"
                 />
+                <div *ngIf="formCreateStagiaire.get('adresseStagiaire')?.touched && formCreateStagiaire.get('adresseStagiaire')?.invalid">
+                  <small class="text-danger" *ngIf="formCreateStagiaire.get('adresseStagiaire')?.errors">
+                    Ce champs est obligatoire ! mininum 15 caractères
+                  </small>
+                </div>
               </div>
 
-              <button class="btn btn-success" type="submit">Envoyer !</button>
+              <button class="btn btn-success" type="submit" onclick="onSubmit()">Envoyer !</button>
+              &nbsp;&nbsp;
+
+              <!-- <div *ngIf="formCreateStagiaire.valid"> -->
+                <span class="text-danger" #mySpan></span>
+              <!-- </div> -->
+                <br/>
+              <div>
+                <span class="text-info" #myValidationEnregistrementStagiaire></span>
+              </div>
+
             </form>
           </div>
         </div>

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Pipe } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
+import { FormationService } from '../formation.service';
+import { Formation } from '../formation';
 
 @Component({
   selector: 'app-formations',
@@ -10,9 +13,12 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class FormationsComponent implements OnInit {
 
-newsletterForm!:FormControl;
 
-  constructor(private router:Router) { }
+  FormationTrainings!: Formation[];
+
+  newsletterForm!:FormControl;
+
+  constructor(private formationService:FormationService, private router:Router) { }
 
   ngOnInit(): void {
     this.newsletterForm = new FormControl('',[

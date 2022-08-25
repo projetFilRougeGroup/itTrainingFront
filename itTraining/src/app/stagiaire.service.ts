@@ -8,7 +8,7 @@ import { Stagiaire } from './stagiaire';
 })
 export class StagiaireService {
 
-  private baseURLStagiaire = "http://localhost:8080/formation/stagiaires";
+  private baseURLStagiaire = "http://localhost:8080/formation/stagiaires"
   constructor(private httpClient:HttpClient) { }
 
   getStagiaireList():Observable<Stagiaire[]>{
@@ -17,7 +17,7 @@ export class StagiaireService {
   getStagiaireById(idStagiaire:number):Observable<Stagiaire>{
     return this.httpClient.get<Stagiaire>(`${this.baseURLStagiaire}/${idStagiaire}`);
   }
-  CreateStagiaire(stagiaire:Stagiaire):Observable<Object>{
+  CreateStagiaire(stagiaire:Stagiaire):Observable<Stagiaire>{
     return this.httpClient.post(`${this.baseURLStagiaire}`, stagiaire);
   }
 

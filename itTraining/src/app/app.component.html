@@ -49,46 +49,10 @@
               </a>
             </h6>
 
-            <h6 class="text-uppercase fw-bold dropdown">
-              <a routerLink="#" class="nav-item nav-link" data-toggle="dropdown" id="dropdownMenuButton">
-                Formations
+            <h6 class="text-uppercase fw-bold">
+              <a routerLink="/FormationListComponent" class="nav-item nav-link" data-toggle="dropdown" id="dropdownMenuButton">
+                Nos Formations
               </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-                <div class="dropdown-item">
-                  Infrastructures ​​​​​​​et Cybersécurité
-                </div>
-
-                <div class="dropdown-item">
-                  Développement d'Application
-                </div>
-
-                <div class="dropdown-item">
-                  Intelligence Artificielle ​​​​​et Data
-                </div>
-
-                <div class="dropdown-item">
-                  Fondamentaux​​​​​ Numériques
-                </div>
-
-                <div class="dropdown-item">
-                  Méthodes ​​​​Agiles
-                </div>
-
-                <div class="dropdown-item">
-                  Cloud ​​​​​​​et Devops
-                </div>
-
-
-                  <hr class="dropdown-divider" />
-
-
-                <div class="dropdown-item fw-bold">
-                  <a routerLink="/FormationListComponent">  DÉCOUVREZ NOS CATALOGUES</a>
-                </div>
-
-
-              </div>
             </h6>
 
             <h6 class="text-uppercase fw-bold">
@@ -110,7 +74,7 @@
               >
             </h6>
             <h6 class="text-uppercase fw-bold">
-              <a routerLink="/CreateStagiaireComponent" class="nav-item nav-link"
+              <a [routerLink]="['admin']" class="nav-item nav-link"
                 ><i class="fa fa-user-circle-o" aria-hidden="true"></i> Se connecter</a
               >
             </h6>

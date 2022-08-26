@@ -1,1 +1,72 @@
-<p>u-edit works!</p>
+<div class="container bg-light border">
+  <div class="m-4">
+    <h6 class="text-uppercase fw-bold">
+      <p class="text-center">Edit user</p>
+    </h6>
+    <hr />
+
+    <div class="col-md-6 offset-md-3">
+
+      <form
+      name="form"
+      #f="ngForm"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      >
+      <div class="form-group">
+
+        <label for="nomUser">Nom<span> *</span></label>
+        <input type="text" name="nomUser" id="nomUser" class="form-control" [(ngModel)]="user.nomUser" #nomUser="ngModel" required>
+
+        <div class="form_error" *ngIf="nomUser.errors && f.submitted">
+            Ce champs est obligatoire !
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="prenomUser">Prénom<span> *</span></label>
+        <input type="text" name="prenomUser" id="prenomUser" class="form-control" [(ngModel)]="user.prenomUser" #prenomUser="ngModel" required>
+
+        <div class="form_error" *ngIf="prenomUser.errors && f.submitted">
+            Ce champs est obligatoire !
+        </div>
+
+      </div>
+
+        <div class="form-group">
+
+          <label for="email">Email<span> *</span></label>
+          <input type="text" name="email" id="email" class="form-control" [(ngModel)]="user.email" #email="ngModel" required>
+
+          <div class="form_error" *ngIf="email.errors && f.submitted">
+              Ce champs est obligatoire !
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password <span> *</span></label>
+          <input type="password"  name="password" id="password"  class="form-control" [(ngModel)]="user.password" #password="ngModel" minlength="5" required>
+
+          <div class="form_error" *ngIf="password.errors && f.submitted">
+            <div *ngIf="password.errors['required']">
+              Ce champs est obligatoire !
+            </div>
+            <div *ngIf="password.errors['minlength']">
+              Ce champs doit avoir au moins 5 caractères !
+            </div>
+          </div>
+
+        </div>
+        <br />
+        <div class="form-group">
+          <button class="btn btn-success" type="submit" >Modifier !</button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>
+

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UEditComponent } from './u-edit.component';
+import { EDeleteComponent } from './e-delete.component';
 
-describe('UEditComponent', () => {
-  let component: UEditComponent;
-  let fixture: ComponentFixture<UEditComponent>;
+describe('EDeleteComponent', () => {
+  let component: EDeleteComponent;
+  let fixture: ComponentFixture<EDeleteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UEditComponent ]
+      declarations: [ EDeleteComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UEditComponent);
+    fixture = TestBed.createComponent(EDeleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

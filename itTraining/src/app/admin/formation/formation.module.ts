@@ -6,6 +6,7 @@ import { FIndexComponent } from './f-index/f-index.component';
 import { FEditComponent } from './f-edit/f-edit.component';
 import { FAddComponent } from './f-add/f-add.component';
 import { FDeleteComponent } from './f-delete/f-delete.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FDeleteComponent } from './f-delete/f-delete.component';
   ],
   imports: [
     CommonModule,
-    FormationRoutingModule
+    FormationRoutingModule,
+    FormsModule
   ]
 })
 export class FormationModule { }

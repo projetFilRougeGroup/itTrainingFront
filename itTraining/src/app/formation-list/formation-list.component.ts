@@ -17,6 +17,7 @@ export class FormationListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFormations();
+
   }
   private getFormations(){
     this.formationService.getFormationList().subscribe(data=>{

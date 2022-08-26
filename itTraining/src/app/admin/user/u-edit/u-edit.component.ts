@@ -1,5 +1,8 @@
+import { IUser } from './../../../_interfaces/user';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-u-edit',
@@ -7,15 +10,36 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./u-edit.component.css']
 })
 export class UEditComponent implements OnInit {
+  user: IUser = {
+    idUser: 0,
+    nomUser: '',
+    prenomUser: '',
+    email: '',
+    password: '',
+    updatedAt: '',
+    createdAt: '',
+    deletedAt: null,
+  }
 
-  constructor(private activated:ActivatedRoute ) { }
+  constructor(
+    private activated: ActivatedRoute,
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
-    this.activated.params.subscribe(
-      (data)=>{
-        console.log(data);
-      }
-    )
+    // let uid = this.activated.snapshot.paramMap.get('uid')
+    // console.log(uid)
+
+    // this.userService.getUser(uid).subscribe(
+    //   data => {
+    //     console.log(data)
+    //     // this.user = data.data
+    //   })
   }
+
+  onSubmit(): void {
+    console.log(this.user)
+  }
+
 
 }

@@ -1,1 +1,94 @@
-<p>f-index works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="container bg-light border">
+      <div class="m-4">
+          <div class="panel">
+              <div class="panel-heading">
+                  <div class="row">
+                      <div class="col col-sm-5 col-xs-12">
+                          <h4 class="title">Table Formations</h4>
+                      </div>
+                      <div class="col-sm-7 col-xs-12 text-right">
+                          <span class="btn btn-primary btn-sm"><i class="fa fa-user"></i> FORMATIONS</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="panel-body table-responsive">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th>ID</th>
+                              <th>Nom</th>
+                              <th>Réf</th>
+                              <th>Public</th>
+                              <th>Objectifs</th>
+                              <th>Details</th>
+                              <th>Chapters</th>
+                              <th>Durée</th>
+                              <th>Prix</th>
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+
+                          <tr *ngFor="let formation of formationList">
+                              <td>
+                                {{ formation.idFormation }}
+                              </td>
+                              <td>
+                                {{ formation.nomFormation }}
+                              </td>
+                              <td>
+                                {{ formation.referenceFormation }}
+                              </td>
+                              <td>
+                                {{ formation.publicFormation}}
+                              </td>
+                              <td>
+                                {{ formation.objectifsFormation }}
+                              </td>
+                              <td>
+                                {{ formation.detailsFormation }}
+                              </td>
+                              <td>
+                                {{ formation.chaptersFormation }}
+                              </td>
+                              <td>
+                                {{ formation.dureeFormation }}
+                              </td>
+                              <td>
+                                {{ formation.priceFormation }}
+                              </td>
+                              <td>
+                                  <ul class="action-list">
+                                      <li><a href="#" class="btn"><em class="fa fa-trash"></em></a></li>
+                                      <li><a [routerLink]="['edit', formation.idFormation]" class="btn"><em class="fa fa-edit"></em></a></li>
+
+                                      <!-- <li><a (click)="UEditComponent(userList.idUser) class="btn"><em class="fa fa-edit"></em></a></li> -->
+
+
+                                    </ul>
+                              </td>
+                          </tr>
+
+                      </tbody>
+                  </table>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>

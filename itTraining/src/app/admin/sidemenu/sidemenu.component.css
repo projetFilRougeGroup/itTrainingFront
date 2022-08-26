@@ -5,12 +5,17 @@ nav{
 #sidemenu {
   list-style: none;
   padding: 0px;
+  background: none;
+   border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 14px;
 }
 
 #sidemenu ul{
   list-style: none;
   padding: 8px;
 }
+
 a {
   text-decoration: none;
 }

@@ -1,27 +1,29 @@
-export interface IUser {
-  id:number,
-  nom: string,
-  prenom: string,
-  email: string,
-  password: string,
-  createdAt: string,
-  updatedAt: string,
-  deletedAt: null | string
+export class IUser {
+  idUser?:number;
+  nomUser?:string;
+  prenomUser?:string;
+  email?:string;
+  password?:string;
+  createdAt?: string;
+  updatedAt?: string;
+  deletedAt?: null | string;
 }
 
-export interface ISingleUser{
-  data: IUser
+
+export class ISingleUser{
+  data?: IUser
 }
 
-export interface IDataUser{
-  data: IUser[]
+export class IDataUser{
+  data?: IUser[]
 }
 
-export interface ITokenUser{
-  id: number,
-  nom: string,
-  prenom: string,
-  email: string,
-  iap?: number,
+export class ITokenUser{
+  idUser?: number;
+  nomUser?: string;
+  prenomUser?: string;
+  email?: string;
+  password?:string;
+  iap?: number;
   exp?: number
 }

@@ -1,4 +1,4 @@
-<nav>
+ <nav>
   <ul id="sidemenu">
     <li>
       <a [routerLink]="['dashboard']">Dashboard</a>
@@ -18,5 +18,35 @@
         <li><a [routerLink]="['formation/add']">Ajouter</a></li>
 
       </ul>
+      <li>
+        <h3> > Enseignant</h3>
+      </li>
+        <ul>
+          <li><a [routerLink]="['enseignant']">Liste</a></li>
+          <li><a [routerLink]="['enseignant/add']">Ajouter</a></li>
+
+        </ul>
+        <li>
+          <h3> > Stagiaire</h3>
+        </li>
+          <ul>
+            <li><a [routerLink]="['stagiaire']">Liste</a></li>
+            <li><a [routerLink]="['stagiaire/add']">Ajouter</a></li>
+          </ul>
+
+          <li>
+            <h3> > Session</h3>
+          </li>
+            <ul>
+              <li><a [routerLink]="['session']">Liste</a></li>
+              <li><a [routerLink]="['session/add']">Ajouter</a></li>
+            </ul>
+            <li>
+              <h3> > Theme</h3>
+            </li>
+              <ul>
+                <li><a [routerLink]="['theme']">Liste</a></li>
+                <li><a [routerLink]="['theme/add']">Ajouter</a></li>
+              </ul>
   </ul>
 </nav>

@@ -1,0 +1,31 @@
+<!-- Barre de recherche -->
+
+<div class="container bg-light border mt-4">
+  <div class="m-4">
+    <div class="container">
+      <div
+        class="row height d-flex justify-content-center align-items-center"
+      >
+        <div class="col-md-8">
+          <h6 class="text-uppercase fw-bold text-center">
+            Trouver une formation à distance ou en présentiel
+          </h6>
+          <form class="search">
+            <i class="fa fa-search"></i>
+            <input
+            name="keyword"
+            id="keyword"
+              type="text"
+              class="form-control"
+              placeholder="Thème, référence, mot clé..."
+              ([(ngModel)]="filters.keyword"
+            />
+            <button class="btn btn-primary" (click)="rechercheFormation()" >Recherche</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fin de barre de recherche -->

@@ -1,3 +1,4 @@
+import { RechercheFormationComponent } from './recherche-formation/recherche-formation.component';
 import { AuthGuard } from './_helpers/auth.guard';
 import { ErrorComponent } from './_utils/error/error.component';
 import { FormationsComponent } from './formations/formations.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"CreateStagiaireComponent", component:CreateStagiaireComponent},
   {path:"formation-details/:idFormation", component:FormationDetailsComponent},
   {path: "", redirectTo:"formations", pathMatch:"full" },
+  {path:"rechercheFormation", component:RechercheFormationComponent},
   {path:'admin', loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule),
 canActivate:[AuthGuard]},
   {path:'auth', loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)},

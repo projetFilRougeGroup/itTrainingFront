@@ -16,6 +16,8 @@ import { FormationDetailsComponent } from './formation-details/formation-details
 import { CreateStagiaireComponent } from './create-stagiaire/create-stagiaire.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ErrorComponent } from './_utils/error/error.component';
+import { RechercheFormationComponent } from './recherche-formation/recherche-formation.component';
+
 
 @NgModule({
   declarations: [
@@ -30,8 +32,9 @@ import { ErrorComponent } from './_utils/error/error.component';
     FormationDetailsComponent,
     CreateStagiaireComponent,
     ErrorComponent,
+    RechercheFormationComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, HttpClientModule,Ng2SearchPipeModule],
   providers: [],
   bootstrap: [AppComponent],
 })

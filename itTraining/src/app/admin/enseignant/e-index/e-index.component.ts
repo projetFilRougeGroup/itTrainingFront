@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Enseignant } from 'src/app/_interfaces/enseignant';
+import { EnseignantService } from 'src/app/_services/enseignant.service';
 
 @Component({
   selector: 'app-e-index',
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./e-index.component.css']
 })
 export class EIndexComponent implements OnInit {
+  enseignantList!: Enseignant[];
 
-  constructor() { }
+  constructor(private enseignantService: EnseignantService, private router:Router) { }
 
   ngOnInit(): void {
+    this.getEnseignants();
   }
+
+
+  private getEnseignants(){
+    this.enseignantService.getAllEnseignants().subscribe((data:any)=>{
+      this.enseignantList=data
+    });
+  }
+  // formationDetails(idFormation?: number){
+  //   this.router.navigate(['formation-details',idFormation])
+  // }
+
 
 }

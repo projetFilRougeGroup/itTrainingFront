@@ -8,11 +8,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { AheaderComponent } from './aheader/aheader.component';
 
-import { EIndexComponent } from './enseignant/e-index/e-index.component';
-import { EAddComponent } from './enseignant/e-add/e-add.component';
-import { EDeleteComponent } from './enseignant/e-delete/e-delete.component';
-import { EEditComponent } from './enseignant/e-edit/e-edit.component';
-
 
 @NgModule({
   declarations: [
@@ -20,10 +15,7 @@ import { EEditComponent } from './enseignant/e-edit/e-edit.component';
     DashboardComponent,
     SidemenuComponent,
     AheaderComponent,
-    EIndexComponent,
-    EAddComponent,
-    EDeleteComponent,
-    EEditComponent
+
   ],
   imports: [
     CommonModule,

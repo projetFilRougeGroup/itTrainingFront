@@ -9,6 +9,7 @@ const routes: Routes = [
     {path:'dashboard', component:DashboardComponent},
     {path:'user',loadChildren:()=>import('./user/user.module').then(m=>m.UserModule)},
     {path:'formation',loadChildren:()=>import('./formation/formation.module').then(m=>m.FormationModule)},
+    {path:'enseignant',loadChildren:()=>import('./enseignant/enseignant.module').then(m=>m.EnseignantModule)},
   ]}
 ];
 

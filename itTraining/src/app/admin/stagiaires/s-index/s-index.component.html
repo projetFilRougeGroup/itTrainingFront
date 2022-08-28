@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="container bg-light border">
+      <div class="m-4">
+          <div class="panel">
+              <div class="panel-heading">
+                  <div class="row">
+                      <div class="col col-sm-5 col-xs-12">
+                          <h4 class="title">Table Stagiaire</h4>
+                      </div>
+                      <div class="col-sm-7 col-xs-12 text-right">
+                          <span class="btn btn-primary btn-sm"><i class="fa fa-user"></i> Stagiaire</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="panel-body table-responsive">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th>ID</th>
+                              <th>Nom</th>
+                              <th>Prénom</th>
+                              <th>Email</th>
+                              <th>Téléphone</th>
+                              <th>Adresse</th>
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+
+                          <tr *ngFor="let stagiaire of stagiaireList">
+                              <td>
+                                {{ stagiaire.idStagiaire }}
+                              </td>
+                              <td>
+                                {{ stagiaire.nomStagiaire }}
+                              </td>
+                              <td>
+                                {{ stagiaire.prenomStagiaire }}
+                              </td>
+                              <td>
+                                {{ stagiaire.emailStagiaire}}
+                              </td>
+                              <td>
+                                {{ stagiaire.telStagiaire }}
+                              </td>
+                              <td>
+                                {{ stagiaire.adresseStagiaire }}
+                              </td>
+                              <td>
+                                  <ul class="action-list">
+                                      <li><a class="btn" (click)="deleteStagiaire(stagiaire)"><em class="fa fa-trash"></em></a></li>
+                                      <li><a [routerLink]="['edit', stagiaire.idStagiaire]" class="btn"><em class="fa fa-edit"></em></a></li>
+
+                                    </ul>
+                              </td>
+                          </tr>
+
+                      </tbody>
+                  </table>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>

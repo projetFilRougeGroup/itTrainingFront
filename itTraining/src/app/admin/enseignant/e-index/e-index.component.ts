@@ -23,6 +23,23 @@ export class EIndexComponent implements OnInit {
       this.enseignantList=data
     });
   }
+
+deleteEnseignant(enseignant:any){
+this.enseignantService.deleteEnseignant(enseignant.idEnseignant).subscribe(
+  (resp)=>{
+    console.log(resp);
+    this.getEnseignants();
+  },
+  (err)=>{
+    console.log(err);
+  }
+)
+}
+
+
+
+
+
   // formationDetails(idFormation?: number){
   //   this.router.navigate(['formation-details',idFormation])
   // }

@@ -5,32 +5,159 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>User</title>
+    <title>Enseignant</title>
 </head>
 <body>
-
   <div class="container">
     <div class="container bg-light border">
       <div class="m-4">
           <div class="panel">
-              <div class="panel-heading">
-                  <div class="row">
-                      <div class="col col-sm-5 col-xs-12">
-                          <h4 class="title">Table Enseignant</h4>
+              <!-- <div class="panel-heading"> -->
+                  <!-- <div class="row"> -->
+
+                      <div class="text-right">
+                        <div class="btn btn-primary btn-sm text-right"><i class="fa fa-user"></i> Enseignant</div>
                       </div>
+                  <!-- </div> -->
+              <!-- </div> -->
+
+
+
+              <h3 class="h3-responsive font-weight-bold text-center my-4">
+                Création D'un Enseignant
+              </h3>
+              <div class="col-md-6 offset-md-3">
+
+
+                <form (ngSubmit)="onSubmit()" [formGroup]="formCreateEnseignant">
+                  <div class="form-group">
+                    <label for="nomEnseignant">Nom<span> *</span> </label>
+                    <input
+                    [class.is-invalid]="nomEnseignant?.invalid && nomEnseignant?.touched" [class.is-valid]="nomEnseignant?.valid"
+                    type="text"
+                      class="form-control"
+                      id="nomEnseignant"
+                      name="nomEnseignant"
+                      formControlName="nomEnseignant"
+                      [(ngModel)]="enseignant.nomEnseignant" />
+                      <div *ngIf="nomEnseignant?.touched && nomEnseignant?.invalid">
+                        <small class="text-danger" *ngIf="nomEnseignant?.errors">
+                          Ce champs est obligatoire ! Veuillez saisir un nom valide !
+                        </small>
+                      </div>
+                    </div>
+
+                  <div class="form-group">
+                    <label for="prenomEnseignant">Prénom<span> *</span> </label>
+                    <input
+                    [class.is-invalid]="prenomEnseignant?.invalid && prenomEnseignant?.touched" [class.is-valid]="prenomEnseignant?.valid"
+
+                      type="text"
+                      class="form-control"
+                      id="prenomEnseignant"
+                      name="prenomEnseignant"
+                      formControlName="prenomEnseignant"
+                      [(ngModel)]="enseignant.prenomEnseignant"
+                    />
+                    <div *ngIf="prenomEnseignant?.touched && prenomEnseignant?.invalid">
+                      <small class="text-danger" *ngIf="prenomEnseignant?.errors">
+                        Ce champs est obligatoire ! Veuillez saisir un prénom valide !
+                      </small>
+                    </div>
+                    </div>
+
+
+                  <div class="form-group">
+                    <label for="emailEnseignant">Email<span> *</span></label>
+                    <input
+
+                [class.is-invalid] = "formCreateEnseignant.get('emailEnseignant')?.invalid && formCreateEnseignant.get('emailEnseignant')?.touched"
+                [class.is-valid] = "formCreateEnseignant.get('emailEnseignant')?.valid && formCreateEnseignant.get('emailEnseignant')?.touched"
+
+
+                    type="text"
+                      class="form-control"
+                      id="emailEnseignant"
+                      name="emailEnseignant"
+                      formControlName="emailEnseignant"
+                      [(ngModel)]="enseignant.emailEnseignant"
+                    />
+                    <div *ngIf="formCreateEnseignant.get('emailEnseignant')?.touched && formCreateEnseignant.get('emailEnseignant')?.invalid">
+                      <small class="text-danger" *ngIf="formCreateEnseignant.get('emailEnseignant')?.errors">
+                        Ce champs est obligatoire ! Veuillez saisir un email correct !
+                      </small>
+                    </div>
 
                   </div>
-              </div>
-              <div class="panel-body table-responsive">
-                <form>
+
+                  <div class="form-group">
+                    <label>Téléphone <span>*</span></label>
+                    <input
+                    [class.is-invalid] = "formCreateEnseignant.get('telEnseignant')?.invalid && formCreateEnseignant.get('telEnseignant')?.touched"
+                    [class.is-valid] = "formCreateEnseignant.get('telEnseignant')?.valid && formCreateEnseignant.get('telEnseignant')?.touched"
+
+                      type="text"
+                      class="form-control"
+                      id="telEnseignant"
+                      name="telEnseignant"
+                      formControlName="telEnseignant"
+                      [(ngModel)]="enseignant.telEnseignant"
+                    />
+                    <div *ngIf="formCreateEnseignant.get('telEnseignant')?.touched && formCreateEnseignant.get('telEnseignant')?.invalid">
+                      <small class="text-danger" *ngIf="formCreateEnseignant.get('telEnseignant')?.errors">
+                        Ce champs est obligatoire !
+                      </small>
+                    </div>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label>Adresse <span>*</span></label>
+                    <input
+                    [class.is-invalid] = "formCreateEnseignant.get('adresseEnseignant')?.invalid && formCreateEnseignant.get('adresseEnseignant')?.touched"
+                    [class.is-valid] = "formCreateEnseignant.get('adresseEnseignant')?.valid && formCreateEnseignant.get('adresseEnseignant')?.touched"
+
+                      type="text"
+                      class="form-control"
+                      id="adresseEnseignant"
+
+                      name="adresseEnseignant"
+                      formControlName="adresseEnseignant"
+                      [(ngModel)]="enseignant.adresseEnseignant"
+                    />
+                    <div *ngIf="formCreateEnseignant.get('adresseEnseignant')?.touched && formCreateEnseignant.get('adresseEnseignant')?.invalid">
+                      <small class="text-danger" *ngIf="formCreateEnseignant.get('adresseEnseignant')?.errors">
+                        Ce champs est obligatoire ! mininum 15 caractères
+                      </small>
+                    </div>
+
+                  </div>
+
+                  <span class="text-danger" #mySpan></span>
+
+                  <button class="btn btn-success" type="submit" onclick="onSubmit()">Ajouter !</button>
+                  &nbsp;&nbsp;
+
+                  <span class="text-danger" #mySpann></span>
+
+                    <br/>
+                  <div>
+                    <span class="text-info" #myValidationEnregistrementEnseignant></span>
+                  </div>
 
                 </form>
-              </div>
+                </div>
+
+
+
+
+
+            </div>
+
+            </div>
+
+            </div>
 
           </div>
-      </div>
-  </div>
-</div>
-
 </body>
 </html>

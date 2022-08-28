@@ -1,1 +1,233 @@
-<p>f-add works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formation</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="container bg-light border">
+      <div class="m-4">
+          <div class="panel">
+              <!-- <div class="panel-heading"> -->
+                  <!-- <div class="row"> -->
+
+                      <div class="text-right">
+                        <div class="btn btn-primary btn-sm text-right"><i class="fa fa-user"></i> Formation</div>
+                      </div>
+                  <!-- </div> -->
+              <!-- </div> -->
+              <h3 class="h3-responsive font-weight-bold text-center my-4">
+                Création D'une Formation
+              </h3>
+              <div class="col-md-6 offset-md-3">
+
+                <form (ngSubmit)="onSubmit()" [formGroup]="formCreateFormation">
+                <div class="form-group">
+                  <label for="nomFormation">Nom<span> *</span> </label>
+                  <input
+                  [class.is-invalid]="nomFormation?.invalid && nomFormation?.touched" [class.is-valid]="nomFormation?.valid"
+                  type="text"
+                    class="form-control"
+                    id="nomFormation"
+                    name="nomFormation"
+                    formControlName="nomFormation"
+                    [(ngModel)]="formation.nomFormation" />
+                    <div *ngIf="nomFormation?.touched && nomFormation?.invalid">
+                      <small class="text-danger" *ngIf="nomFormation?.errors">
+                        Ce champs est obligatoire ! Veuillez saisir un nom valide !
+                      </small>
+                    </div>
+                  </div>
+
+                <div class="form-group">
+                  <label for="referenceFormation">Référence<span> *</span> </label>
+                  <input
+                  [class.is-invalid]="referenceFormation?.invalid && referenceFormation?.touched" [class.is-valid]="referenceFormation?.valid"
+
+                    type="text"
+                    class="form-control"
+                    id="referenceFormation"
+                    name="referenceFormationt"
+                    formControlName="referenceFormation"
+                    [(ngModel)]="formation.referenceFormation" />
+                  <div *ngIf="referenceFormation?.touched && referenceFormation?.invalid">
+                    <small class="text-danger" *ngIf="referenceFormation?.errors">
+                      Ce champs est obligatoire !
+                    </small>
+                  </div>
+                  </div>
+
+
+                <div class="form-group">
+                  <label for="publicFormation">Public<span> *</span></label>
+                  <input
+
+              [class.is-invalid] = "formCreateFormation.get('publicFormation')?.invalid && formCreateFormation.get('publicFormation')?.touched"
+              [class.is-valid] = "formCreateFormation.get('publicFormation')?.valid && formCreateFormation.get('publicFormation')?.touched"
+
+
+                  type="text"
+                    class="form-control"
+                    id="publicFormation"
+                    name="publicFormation"
+                    formControlName="publicFormation"
+                    [(ngModel)]="formation.publicFormation"
+                  />
+                  <div *ngIf="formCreateFormation.get('publicFormation')?.touched && formCreateFormation.get('publicFormation')?.invalid">
+                    <small class="text-danger" *ngIf="formCreateFormation.get('publicFormation')?.errors">
+                      Ce champs est obligatoire !
+                    </small>
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+                  <label>objectifs <span>*</span></label>
+                  <input
+                  [class.is-invalid] = "formCreateFormation.get('objectifsFormation')?.invalid && formCreateFormation.get('objectifsFormation')?.touched"
+                  [class.is-valid] = "formCreateFormation.get('objectifsFormation')?.valid && formCreateFormation.get('objectifsFormation')?.touched"
+
+                    type="text"
+                    class="form-control"
+                    id="objectifsFormation"
+                    name="objectifsFormation"
+                    formControlName="objectifsFormation"
+                    [(ngModel)]="formation.objectifsFormation"
+                  />
+                  <div *ngIf="formCreateFormation.get('objectifsFormation')?.touched && formCreateFormation.get('objectifsFormation')?.invalid">
+                    <small class="text-danger" *ngIf="formCreateFormation.get('objectifsFormation')?.errors">
+                      Ce champs est obligatoire !
+                    </small>
+                  </div>
+
+                </div>
+
+
+                <div class="form-group">
+                  <label>Détails <span>*</span></label>
+                  <input
+                  [class.is-invalid] = "formCreateFormation.get('detailsFormation')?.invalid && formCreateFormation.get('detailsFormation')?.touched"
+                  [class.is-valid] = "formCreateFormation.get('detailsFormation')?.valid && formCreateFormation.get('detailsFormation')?.touched"
+
+                    type="text"
+                    class="form-control"
+                    id="detailsFormation"
+                    name="detailsFormation"
+                    formControlName="detailsFormation"
+                    [(ngModel)]="formation.detailsFormation"
+                  />
+                  <div *ngIf="formCreateFormation.get('detailsFormation')?.touched && formCreateFormation.get('detailsFormation')?.invalid">
+                    <small class="text-danger" *ngIf="formCreateFormation.get('detailsFormation')?.errors">
+                      Ce champs est obligatoire !
+                    </small>
+                  </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+                  <label>Chapters <span>*</span></label>
+                  <input
+                  [class.is-invalid] = "formCreateFormation.get('chaptersFormation')?.invalid && formCreateFormation.get('chaptersFormation')?.touched"
+                  [class.is-valid] = "formCreateFormation.get('chaptersFormation')?.valid && formCreateFormation.get('chaptersFormation')?.touched"
+
+                    type="text"
+                    class="form-control"
+                    id="chaptersFormation"
+                    name="chaptersFormation"
+                    formControlName="chaptersFormation"
+                    [(ngModel)]="formation.chaptersFormation"
+                  />
+                  <div *ngIf="formCreateFormation.get('chaptersFormation')?.touched && formCreateFormation.get('chaptersFormation')?.invalid">
+                    <small class="text-danger" *ngIf="formCreateFormation.get('chaptersFormation')?.errors">
+                      Ce champs est obligatoire !
+                    </small>
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+                  <label>Prix <span>*</span></label>
+                  <input
+                  [class.is-invalid] = "formCreateFormation.get('priceFormation')?.invalid && formCreateFormation.get('priceFormation')?.touched"
+                  [class.is-valid] = "formCreateFormation.get('priceFormation')?.valid && formCreateFormation.get('priceFormation')?.touched"
+
+                    type="text"
+                    class="form-control"
+                    id="priceFormation"
+                    name="priceFormation"
+                    formControlName="priceFormation"
+                    [(ngModel)]="formation.priceFormation"
+                  />
+                  <div *ngIf="formCreateFormation.get('priceFormation')?.touched && formCreateFormation.get('priceFormation')?.invalid">
+                    <small class="text-danger" *ngIf="formCreateFormation.get('priceFormation')?.errors">
+                      Ce champs est obligatoire !
+                    </small>
+                  </div>
+
+                </div>
+
+
+                <div class="form-group">
+                  <label>Durée <span>*</span></label>
+                  <input
+                  [class.is-invalid] = "formCreateFormation.get('dureeFormation')?.invalid && formCreateFormation.get('dureeFormation')?.touched"
+                  [class.is-valid] = "formCreateFormation.get('dureeFormation')?.valid && formCreateFormation.get('dureeFormation')?.touched"
+
+                    type="text"
+                    class="form-control"
+                    id="dureeFormation"
+                    name="dureeFormation"
+                    formControlName="dureeFormation"
+                    [(ngModel)]="formation.dureeFormation"
+                  />
+                  <div *ngIf="formCreateFormation.get('dureeFormation')?.touched && formCreateFormation.get('dureeFormation')?.invalid">
+                    <small class="text-danger" *ngIf="formCreateFormation.get('dureeFormation')?.errors">
+                      Ce champs est obligatoire !
+                    </small>
+                  </div>
+
+                </div>
+
+
+
+
+                <button class="btn btn-success" type="submit" onclick="onSubmit()">Ajouter !</button>
+                &nbsp;&nbsp;
+
+                <span class="text-danger" #mySpanFormation></span>
+
+                &nbsp;&nbsp;
+                <div>
+                  <span class="text-info" #myValidationEnregistrementFormation></span>
+                </div>
+
+              </form>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

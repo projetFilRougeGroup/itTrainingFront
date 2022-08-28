@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User</title>
+</head>
+<body>
+  <div class="container">
+    <div class="container bg-light border">
+      <div class="m-4">
+          <div class="panel">
+              <!-- <div class="panel-heading"> -->
+                  <!-- <div class="row"> -->
+
+                      <div class="text-right">
+                        <div class="btn btn-primary btn-sm text-right"><i class="fa fa-user"></i> Stagiaire</div>
+                      </div>
+                  <!-- </div> -->
+              <!-- </div> -->
+
+
+
+              <h3 class="h3-responsive font-weight-bold text-center my-4">
+                Création D'un Stagiaire
+              </h3>
+              <div class="col-md-6 offset-md-3">
+
+
+                <form (ngSubmit)="onSubmit()" [formGroup]="formCreateStagiaire">
+                  <div class="form-group">
+                    <label for="nomStagiaire">Nom<span> *</span> </label>
+                    <input
+                    [class.is-invalid]="nomStagiaire?.invalid && nomStagiaire?.touched" [class.is-valid]="nomStagiaire?.valid"
+                    type="text"
+                      class="form-control"
+                      id="nomStagiaire"
+                      name="nomStagiaire"
+                      formControlName="nomStagiaire"
+                      [(ngModel)]="stagiaire.nomStagiaire" />
+                      <div *ngIf="nomStagiaire?.touched && nomStagiaire?.invalid">
+                        <small class="text-danger" *ngIf="nomStagiaire?.errors">
+                          Ce champs est obligatoire ! Veuillez saisir un nom valide !
+                        </small>
+                      </div>
+                    </div>
+
+                  <div class="form-group">
+                    <label for="prenomStagiaire">Prénom<span> *</span> </label>
+                    <input
+                    [class.is-invalid]="prenomStagiaire?.invalid && prenomStagiaire?.touched" [class.is-valid]="prenomStagiaire?.valid"
+
+                      type="text"
+                      class="form-control"
+                      id="prenomStagiaire"
+                      name="prenomStagiaire"
+                      formControlName="prenomStagiaire"
+                      [(ngModel)]="stagiaire.prenomStagiaire"
+                    />
+                    <div *ngIf="prenomStagiaire?.touched && prenomStagiaire?.invalid">
+                      <small class="text-danger" *ngIf="prenomStagiaire?.errors">
+                        Ce champs est obligatoire ! Veuillez saisir un prénom valide !
+                      </small>
+                    </div>
+                    </div>
+
+
+                  <div class="form-group">
+                    <label for="emailStagiaire">Email<span> *</span></label>
+                    <input
+
+                [class.is-invalid] = "formCreateStagiaire.get('emailStagiaire')?.invalid && formCreateStagiaire.get('emailStagiaire')?.touched"
+                [class.is-valid] = "formCreateStagiaire.get('emailStagiaire')?.valid && formCreateStagiaire.get('emailStagiaire')?.touched"
+
+
+                    type="text"
+                      class="form-control"
+                      id="emailStagiaire"
+                      name="emailStagiaire"
+                      formControlName="emailStagiaire"
+                      [(ngModel)]="stagiaire.emailStagiaire"
+                    />
+                    <div *ngIf="formCreateStagiaire.get('emailStagiaire')?.touched && formCreateStagiaire.get('emailStagiaire')?.invalid">
+                      <small class="text-danger" *ngIf="formCreateStagiaire.get('emailStagiaire')?.errors">
+                        Ce champs est obligatoire ! Veuillez saisir un email correct !
+                      </small>
+                    </div>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label>Téléphone <span>*</span></label>
+                    <input
+                    [class.is-invalid] = "formCreateStagiaire.get('telStagiaire')?.invalid && formCreateStagiaire.get('telStagiaire')?.touched"
+                    [class.is-valid] = "formCreateStagiaire.get('telStagiaire')?.valid && formCreateStagiaire.get('telStagiaire')?.touched"
+
+                      type="text"
+                      class="form-control"
+                      id="telStagiaire"
+                      name="telStagiaire"
+                      formControlName="telStagiaire"
+                      [(ngModel)]="stagiaire.telStagiaire"
+                    />
+                    <div *ngIf="formCreateStagiaire.get('telStagiaire')?.touched && formCreateStagiaire.get('telStagiaire')?.invalid">
+                      <small class="text-danger" *ngIf="formCreateStagiaire.get('telStagiaire')?.errors">
+                        Ce champs est obligatoire !
+                      </small>
+                    </div>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label>Adresse <span>*</span></label>
+                    <input
+                    [class.is-invalid] = "formCreateStagiaire.get('adresseStagiaire')?.invalid && formCreateStagiaire.get('adresseStagiaire')?.touched"
+                    [class.is-valid] = "formCreateStagiaire.get('adresseStagiaire')?.valid && formCreateStagiaire.get('adresseStagiaire')?.touched"
+
+                      type="text"
+                      class="form-control"
+                      id="adresseStagiaire"
+
+                      name="adresseStagiaire"
+                      formControlName="adresseStagiaire"
+                      [(ngModel)]="stagiaire.adresseStagiaire"
+                    />
+                    <div *ngIf="formCreateStagiaire.get('adresseStagiaire')?.touched && formCreateStagiaire.get('adresseStagiaire')?.invalid">
+                      <small class="text-danger" *ngIf="formCreateStagiaire.get('adresseStagiaire')?.errors">
+                        Ce champs est obligatoire ! mininum 15 caractères
+                      </small>
+                    </div>
+
+                  </div>
+
+
+
+                  <button class="btn btn-success" type="submit" onclick="onSubmit()">Ajouter !</button>
+                  &nbsp;&nbsp;
+
+                  <span class="text-danger" #mySpanStagiaire></span>
+
+                    <br/>
+                  <div>
+                    <span class="text-info" #myValidationEnregistrementStagiaire></span>
+                  </div>
+
+                </form>
+                </div>
+
+
+
+
+
+            </div>
+
+            </div>
+
+            </div>
+
+          </div>
+</body>
+</html>

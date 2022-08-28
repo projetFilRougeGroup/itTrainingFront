@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User</title>
+</head>
+<body>
+  <div class="container">
+    <div class="container bg-light border">
+      <div class="m-4">
+          <div class="panel">
+              <!-- <div class="panel-heading"> -->
+                  <!-- <div class="row"> -->
+
+                      <div class="text-right">
+                        <div class="btn btn-primary btn-sm text-right"><i class="fa fa-user"></i> Theme</div>
+                      </div>
+                  <!-- </div> -->
+              <!-- </div> -->
+
+
+
+              <h3 class="h3-responsive font-weight-bold text-center my-4">
+                Création D'un Theme
+              </h3>
+              <div class="col-md-6 offset-md-3">
+
+
+                <form (ngSubmit)="onSubmit()" [formGroup]="formCreateTheme">
+                  <div class="form-group">
+                    <label for="nomTheme">Nom<span> *</span> </label>
+                    <input
+                    [class.is-invalid]="nomTheme?.invalid && nomTheme?.touched" [class.is-valid]="nomTheme?.valid"
+                    type="text"
+                      class="form-control"
+                      id="nomTheme"
+                      name="nomTheme"
+                      formControlName="nomTheme"
+                      [(ngModel)]="theme.nomTheme" />
+                      <div *ngIf="nomTheme?.touched && nomTheme?.invalid">
+                        <small class="text-danger" *ngIf="nomTheme?.errors">
+                          Ce champs est obligatoire ! Veuillez saisir un nom valide !
+                        </small>
+                      </div>
+                    </div>
+
+
+
+
+
+                  <button class="btn btn-success" type="submit" onclick="onSubmit()">Ajouter !</button>
+                  &nbsp;&nbsp;
+
+                  <span class="text-danger" #mySpanTheme></span>
+
+                    <br/>
+                  <div>
+                    <span class="text-info" #myValidationEnregistrementTheme></span>
+                  </div>
+
+                </form>
+                </div>
+
+
+
+
+
+            </div>
+
+            </div>
+
+            </div>
+
+          </div>
+</body>
+</html>

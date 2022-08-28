@@ -21,7 +21,7 @@ footer {
   font-family: 'Fascinate Inline', cursive;
 
   font-family: 'Libre Barcode 39 Text', cursive;
-
+  color: #6E7076 !important;
   font-family: 'Tiro Tamil', serif;
   background-color: #E6E8EE !important;
   bottom: 0;
@@ -32,8 +32,9 @@ box-shadow: 0px -4px 5px 0px #ccc;
 .dropdown-item{
   cursor: pointer;
 }
+
 nav a:hover{
-  color:navy !important;
+  color:#2B88B8 !important;
 
 }
 nav a:focus {

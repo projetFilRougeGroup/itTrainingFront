@@ -59,7 +59,7 @@
                               </td>
                               <td>
                                   <ul class="action-list">
-                                      <li><a href="#" class="btn"><em class="fa fa-trash"></em></a></li>
+                                      <li><a class="btn" (click)="deleteEnseignant(enseignant)"><em class="fa fa-trash"></em></a></li>
                                       <li><a [routerLink]="['edit', enseignant.idEnseignant]" class="btn"><em class="fa fa-edit"></em></a></li>
 
                                     </ul>

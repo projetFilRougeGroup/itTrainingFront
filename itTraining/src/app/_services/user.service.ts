@@ -25,6 +25,20 @@ export class UserService {
   // addUser(user:IUser):Observable<IUser>{
   //   return this.httpClient.put('${this.url}',user);
   // }
+  CreateUser(user:IUser):Observable<IUser>{
+    return this.httpClient.post(`${this.url}`, user);
+  }
+
+  public deleteUser(idUser:any){
+    return this.httpClient.delete(this.url+'/'+idUser);
+  }
+
+
+
+
+
+
+
   }
 
 

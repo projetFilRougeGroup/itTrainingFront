@@ -10,6 +10,9 @@ const routes: Routes = [
     {path:'user',loadChildren:()=>import('./user/user.module').then(m=>m.UserModule)},
     {path:'formation',loadChildren:()=>import('./formation/formation.module').then(m=>m.FormationModule)},
     {path:'enseignant',loadChildren:()=>import('./enseignant/enseignant.module').then(m=>m.EnseignantModule)},
+    {path:'stagiaires',loadChildren:()=>import('./stagiaires/stagiaires.module').then(m=>m.StagiairesModule)},
+    {path:'session', loadChildren:()=>import('./session/session.module').then(m=>m.SessionModule)},
+    {path:'theme', loadChildren:()=>import('./them/them.module').then(m=>m.ThemModule)}
   ]}
 ];
 

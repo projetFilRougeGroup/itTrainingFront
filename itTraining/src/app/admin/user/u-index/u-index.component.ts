@@ -26,4 +26,17 @@ export class UIndexComponent implements OnInit {
     });
   }
 
+
+  deleteUser(user:any){
+    this.userService.deleteUser(user.idUser).subscribe(
+      (resp)=>{
+        console.log(resp);
+        this.getUsers();
+      },
+      (err)=>{
+        console.log(err);
+      }
+    )
+  }
+
 }

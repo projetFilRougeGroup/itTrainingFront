@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User</title>
+</head>
+<body>
+  <div class="container">
+    <div class="container bg-light border">
+      <div class="m-4">
+          <div class="panel">
+              <!-- <div class="panel-heading"> -->
+                  <!-- <div class="row"> -->
+
+                      <div class="text-right">
+                        <div class="btn btn-primary btn-sm text-right"><i class="fa fa-user"></i> Session</div>
+                      </div>
+                  <!-- </div> -->
+              <!-- </div> -->
+
+
+
+              <h3 class="h3-responsive font-weight-bold text-center my-4">
+                Création D'un Session
+              </h3>
+              <div class="col-md-6 offset-md-3">
+
+
+                <form (ngSubmit)="onSubmit()" [formGroup]="formCreateSession">
+                  <div class="form-group">
+                    <label for="dateDebutSession">Date Début Session<span> *</span> </label>
+                    <input
+                    [class.is-invalid]="dateDebutSession?.invalid && dateDebutSession?.touched" [class.is-valid]="dateDebutSession?.valid"
+                    type="text"
+                      class="form-control"
+                      id="dateDebutSession"
+                      name="dateDebutSession"
+                      formControlName="dateDebutSession"
+                      [(ngModel)]="Session.dateDebutSession" />
+                      <div *ngIf="dateDebutSession?.touched && dateDebutSession?.invalid">
+                        <small class="text-danger" *ngIf="dateDebutSession?.errors">
+                          Ce champs est obligatoire !
+                        </small>
+                      </div>
+                    </div>
+
+                  <div class="form-group">
+                    <label for="dateFinSession">Date Fin De Session<span> *</span> </label>
+                    <input
+                    [class.is-invalid]="dateFinSession?.invalid && dateFinSession?.touched" [class.is-valid]="dateFinSession?.valid"
+
+                      type="text"
+                      class="form-control"
+                      id="dateFinSession"
+                      name="dateFinSession"
+                      formControlName="dateFinSession"
+                      [(ngModel)]="Session.dateFinSession"
+                    />
+                    <div *ngIf="dateFinSession?.touched && dateFinSession?.invalid">
+                      <small class="text-danger" *ngIf="dateFinSession?.errors">
+                        Ce champs est obligatoire !
+                      </small>
+                    </div>
+                    </div>
+
+
+                  <div class="form-group">
+                    <label for="price">price<span> *</span></label>
+                    <input
+
+                [class.is-invalid] = "formCreateSession.get('price')?.invalid && formCreateSession.get('price')?.touched"
+                [class.is-valid] = "formCreateSession.get('price')?.valid && formCreateSession.get('price')?.touched"
+
+
+                    type="text"
+                      class="form-control"
+                      id="price"
+                      name="price"
+                      formControlName="price"
+                      [(ngModel)]="Session.price"
+                    />
+                    <div *ngIf="formCreateSession.get('price')?.touched && formCreateSession.get('price')?.invalid">
+                      <small class="text-danger" *ngIf="formCreateSession.get('price')?.errors">
+                        Ce champs est obligatoire !
+                      </small>
+                    </div>
+
+                  </div>
+
+
+
+
+                  <button class="btn btn-success" type="submit" onclick="onSubmit()">Ajouter !</button>
+                  &nbsp;&nbsp;
+
+                  <span class="text-danger" #mySpanSession></span>
+
+                    <br/>
+                  <div>
+                    <span class="text-info" #myValidationEnregistrementSession></span>
+                  </div>
+
+                </form>
+                </div>
+
+
+
+
+
+            </div>
+
+            </div>
+
+            </div>
+
+          </div>
+</body>
+</html>

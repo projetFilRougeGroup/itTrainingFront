@@ -5,11 +5,6 @@
   background: none;
   color: #CFD8DC;
   font-size: 14px;
-
-  -moz-box-shadow:    -3px 0 5px 0 #555;
-  -webkit-box-shadow: -3px 0 5px 0 #555;
-  box-shadow:         -3px 0 5px 0 #555;
-
 }
 
 #sidemenu ul{
@@ -22,6 +17,8 @@
 a {
   text-decoration: none;
 }
-*{
-  background-color: #FEE5E7;
+.navSide{
+  padding-left: 20%;
+
 }
+

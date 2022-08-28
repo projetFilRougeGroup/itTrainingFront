@@ -42,7 +42,7 @@ export class CreateStagiaireComponent implements OnInit {
   saveStagiaire(){
     this.stagiaireService.CreateStagiaire(this.stagiaire).subscribe(data=>{
       console.log(data);
-      // this.goToStagiaireList();
+      //this.goToStagiaireList();
     },error=>console.log(error)
     );
   }

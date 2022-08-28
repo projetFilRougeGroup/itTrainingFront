@@ -29,6 +29,10 @@ export class EnseignantService {
     return this.httpClient.post(`${this.url}`, enseignant);
   }
 
+  public deleteEnseignant(idEnseignant:any) {
+    return this.httpClient.delete(this.url + '/' + idEnseignant);
+  }
+
 
 
   }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -10,7 +11,6 @@ import { ContactPublicComponent } from './contact-public/contact-public.componen
 import { CertificationsComponent } from './certifications/certifications.component';
 import { InfrastructuresEtCybersecuriteComponent } from './infrastructures-et-cybersecurite/infrastructures-et-cybersecurite.component';
 import { InfosPratiquesComponent } from './infos-pratiques/infos-pratiques.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormationListComponent } from './formation-list/formation-list.component';
 import { FormationDetailsComponent } from './formation-details/formation-details.component';
 import { CreateStagiaireComponent } from './create-stagiaire/create-stagiaire.component';
@@ -34,7 +34,7 @@ import { RechercheFormationComponent } from './recherche-formation/recherche-for
     ErrorComponent,
     RechercheFormationComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, HttpClientModule,Ng2SearchPipeModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule,Ng2SearchPipeModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -24,9 +24,8 @@ const routes: Routes = [
   {path:"formation-details/:idFormation", component:FormationDetailsComponent},
   {path: "", redirectTo:"formations", pathMatch:"full" },
   {path:"rechercheFormation", component:RechercheFormationComponent},
-  {path:'admin', loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule),
-canActivate:[AuthGuard]},
-  {path:'auth', loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)},
+  {path:'admin', loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule)},
+
   {path:'**', component:ErrorComponent}  // page d'erreur si aucun lien n'est valide
 
 
